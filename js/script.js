@@ -1,9 +1,9 @@
 let tabsBtn = document.querySelectorAll('.guests__item-btn');
 let tabsItem = document.querySelectorAll('.tabs-item');
-let closed = document.querySelector('.burger__closed');
+let closed = document.querySelector('.header__burger-closed');
 let burger = document.querySelector('.burger');
 let menu = document.querySelector('.nav');
-let down = document.querySelector('.nav__down');
+let down = document.querySelector('.header__nav-second');
 let menuLinks = document.querySelectorAll('.header__nav-link');
 const element = document.querySelector('.selector');
 const choices = new Choices(element, {
@@ -18,8 +18,8 @@ burger.addEventListener('click',
         burger.classList.toggle('burger--active');
 
         menu.classList.toggle('nav--active');
-        down.classList.toggle('nav__down--active');
-        document.querySelector('.burger__closed').classList.toggle('is-active');
+        down.classList.toggle('header__nav-second--active');
+        document.querySelector('.header__burger-closed').classList.toggle('is-active');
 
         document.body.classList.toggle('stop-scroll');
 
@@ -28,8 +28,8 @@ burger.addEventListener('click',
 closed.addEventListener('click', function() {
     document.querySelector('.burger').classList.toggle('burger--active');
     document.querySelector('.nav').classList.toggle('nav--active');
-    document.querySelector('.nav__down').classList.toggle('nav__down--active');
-    document.querySelector('.burger__closed').classList.toggle('is-active');
+    document.querySelector('.header__nav-second').classList.toggle('header__nav-second--active');
+    document.querySelector('.header__burger-closed').classList.toggle('is-active');
 });
 menuLinks.forEach(function(el) {
     el.addEventListener('click', function() {
@@ -37,7 +37,7 @@ menuLinks.forEach(function(el) {
 
         menu.classList.remove('nav--active');
 
-        down.classList.remove('nav__down--active');
+        down.classList.remove('header__nav-second--active');
 
         document.body.classList.remove('stop-scroll');
 
@@ -114,7 +114,7 @@ const swiper1 = new Swiper('.playlists__swiper', {
 
 });
 
-const validation = new JustValidate('#form', {
+const validation = new JustValidate('.about__form', {
     errorFieldCssClass: 'is-invalid',
     errorLabelCssClass: 'is-label-invalid',
     errorLabelStyle: {
